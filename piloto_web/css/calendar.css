@@ -1,0 +1,365 @@
+/* =============================================
+   KineApp — Calendar Styles
+   ============================================= */
+
+/* ══════════════════════════════════════════════
+   CALENDAR TOOLBAR
+   ══════════════════════════════════════════════ */
+
+.calendar-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-5);
+    flex-wrap: wrap;
+    gap: var(--space-3);
+}
+
+.calendar-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.calendar-nav h3 {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-semibold);
+    min-width: 200px;
+    text-align: center;
+}
+
+.calendar-nav .btn-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+}
+
+.calendar-nav .btn-icon:hover {
+    background: var(--surface-hover);
+    color: var(--text);
+}
+
+.calendar-filters {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.calendar-filter-select {
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-4);
+    color: var(--text);
+    font-size: var(--fs-sm);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    padding-right: var(--space-8);
+    min-width: 180px;
+}
+
+/* ══════════════════════════════════════════════
+   CALENDAR LEGEND
+   ══════════════════════════════════════════════ */
+
+.calendar-legend {
+    display: flex;
+    gap: var(--space-5);
+    margin-bottom: var(--space-5);
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+}
+
+.legend-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+}
+
+.legend-dot.available { background: var(--available); }
+.legend-dot.scheduled { background: var(--scheduled); }
+.legend-dot.unavailable { background: var(--unavailable); }
+
+/* ══════════════════════════════════════════════
+   CALENDAR GRID (Weekly View)
+   ══════════════════════════════════════════════ */
+
+.calendar-grid {
+    display: grid;
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--surface);
+}
+
+/* Weekly view: time column + 5-7 day columns */
+.calendar-grid.weekly {
+    grid-template-columns: 80px repeat(5, 1fr);
+}
+
+.calendar-grid.weekly-7 {
+    grid-template-columns: 80px repeat(7, 1fr);
+}
+
+/* Daily view: time column + kinesio columns */
+.calendar-grid.daily {
+    grid-template-columns: 80px repeat(var(--kinesio-count, 4), 1fr);
+}
+
+/* ── Day Headers ── */
+.calendar-day-header {
+    padding: var(--space-3) var(--space-2);
+    text-align: center;
+    background: rgba(26, 86, 219, 0.08);
+    border-bottom: 1px solid var(--surface-border);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    color: var(--text-secondary);
+}
+
+.calendar-day-header.today {
+    color: var(--primary);
+    background: var(--primary-light);
+}
+
+.calendar-day-header .day-name {
+    display: block;
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calendar-day-header .day-number {
+    display: block;
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+    color: var(--text);
+}
+
+.calendar-day-header.today .day-number {
+    color: var(--primary);
+}
+
+/* ── Time Column ── */
+.calendar-time-header {
+    padding: var(--space-3);
+    text-align: center;
+    background: rgba(26, 86, 219, 0.08);
+    border-bottom: 1px solid var(--surface-border);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    color: var(--text-muted);
+}
+
+.calendar-time {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-medium);
+    color: var(--text-muted);
+    text-align: center;
+    border-bottom: 1px solid var(--surface-border);
+    border-right: 1px solid var(--surface-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+}
+
+.calendar-time .time-start {
+    font-weight: var(--fw-semibold);
+    color: var(--text-secondary);
+    font-size: var(--fs-sm);
+}
+
+.calendar-time .time-end {
+    font-size: var(--fs-xs);
+    color: var(--text-muted);
+}
+
+/* ══════════════════════════════════════════════
+   CALENDAR BLOCKS (Slots)
+   ══════════════════════════════════════════════ */
+
+.calendar-slot {
+    border-bottom: 1px solid var(--surface-border);
+    border-right: 1px solid var(--surface-border);
+    padding: var(--space-1);
+    min-height: 60px;
+    transition: background var(--transition-fast);
+    position: relative;
+}
+
+.calendar-slot:last-child {
+    border-right: none;
+}
+
+/* Available (Green) */
+.calendar-slot.available {
+    background: var(--available-bg);
+    cursor: pointer;
+}
+
+.calendar-slot.available:hover {
+    background: rgba(5, 150, 105, 0.35);
+}
+
+.calendar-slot.available::after {
+    content: '+ Agendar';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    color: var(--available);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.calendar-slot.available:hover::after {
+    opacity: 1;
+}
+
+/* Scheduled (Blue) */
+.calendar-slot.scheduled {
+    background: var(--scheduled-bg);
+    cursor: pointer;
+}
+
+.calendar-slot.scheduled:hover {
+    background: rgba(59, 130, 246, 0.35);
+}
+
+/* Unavailable (Red) */
+.calendar-slot.unavailable {
+    background: var(--unavailable-bg);
+}
+
+/* Empty / No availability */
+.calendar-slot.empty {
+    background: transparent;
+}
+
+/* ── Slot Content ── */
+.slot-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--space-1);
+    border-radius: var(--radius-sm);
+    height: 100%;
+}
+
+.slot-patient {
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.slot-kinesio {
+    font-size: 10px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.slot-badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: var(--fw-bold);
+    padding: 1px 6px;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.slot-badge.realizada {
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.slot-badge.agendada {
+    background: var(--info-light);
+    color: var(--info);
+}
+
+/* ══════════════════════════════════════════════
+   AVAILABILITY GRID (Kinesio Portal)
+   ══════════════════════════════════════════════ */
+
+.availability-grid {
+    display: grid;
+    grid-template-columns: 100px repeat(5, 1fr);
+    gap: 1px;
+    background: var(--surface-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.availability-grid.with-weekend {
+    grid-template-columns: 100px repeat(7, 1fr);
+}
+
+.availability-header {
+    background: var(--surface);
+    padding: var(--space-3);
+    text-align: center;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    color: var(--text-secondary);
+}
+
+.availability-time {
+    background: var(--surface);
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--fs-xs);
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.availability-cell {
+    background: var(--surface);
+    padding: var(--space-2);
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.availability-cell:hover {
+    background: var(--surface-hover);
+}
+
+.availability-cell.selected {
+    background: var(--available-bg);
+}
+
+.availability-cell.selected::after {
+    content: '✓';
+    font-size: var(--fs-md);
+    font-weight: var(--fw-bold);
+    color: var(--available);
+}
