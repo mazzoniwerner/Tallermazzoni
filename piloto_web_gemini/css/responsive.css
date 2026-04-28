@@ -1,0 +1,244 @@
+/* =============================================
+   KineApp — Responsive (Mobile-First)
+   ============================================= */
+
+/* ══════════════════════════════════════════════
+   TABLET (≤ 1024px)
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .calendar-grid.weekly {
+        grid-template-columns: 60px repeat(5, 1fr);
+    }
+
+    .calendar-time {
+        font-size: 10px;
+        padding: var(--space-1);
+    }
+
+    .calendar-day-header .day-name {
+        font-size: 10px;
+    }
+
+    .calendar-day-header .day-number {
+        font-size: var(--fs-base);
+    }
+}
+
+/* ══════════════════════════════════════════════
+   MOBILE (≤ 768px)
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+    /* Sidebar */
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .app-main {
+        margin-left: 0 !important;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: var(--space-4);
+    }
+
+    /* Header */
+    .header {
+        padding: 0 var(--space-4);
+    }
+
+    .header-menu-btn {
+        display: flex;
+    }
+
+    .header-title h2 {
+        font-size: var(--fs-lg);
+    }
+
+    /* Page header */
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .page-header-actions {
+        width: 100%;
+    }
+
+    .page-header-actions .btn {
+        flex: 1;
+    }
+
+    /* Grids */
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* Calendar */
+    .calendar-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .calendar-nav {
+        justify-content: space-between;
+    }
+
+    .calendar-filters {
+        justify-content: stretch;
+    }
+
+    .calendar-filter-select {
+        flex: 1;
+    }
+
+    .calendar-grid.weekly {
+        grid-template-columns: 50px repeat(5, 1fr);
+        font-size: var(--fs-xs);
+    }
+
+    .calendar-slot::after {
+        font-size: 9px;
+    }
+
+    .slot-patient {
+        font-size: 10px;
+    }
+
+    .slot-kinesio {
+        display: none;
+    }
+
+    /* Calendar legend */
+    .calendar-legend {
+        gap: var(--space-3);
+    }
+
+    /* Modal */
+    .modal {
+        max-height: 100vh;
+        border-radius: var(--radius-lg);
+        margin: var(--space-2);
+    }
+
+    .modal-body {
+        padding: var(--space-4);
+    }
+
+    /* Tabs */
+    .tabs {
+        overflow-x: auto;
+    }
+
+    .tab {
+        white-space: nowrap;
+        min-width: max-content;
+    }
+
+    /* Table */
+    .table th,
+    .table td {
+        padding: var(--space-2) var(--space-3);
+        font-size: var(--fs-sm);
+    }
+
+    /* Search */
+    .search-bar {
+        max-width: none;
+    }
+
+    /* Availability Grid */
+    .availability-grid {
+        grid-template-columns: 70px repeat(5, 1fr);
+        font-size: var(--fs-xs);
+    }
+
+    /* Stat cards */
+    .stat-card {
+        padding: var(--space-4);
+    }
+
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .stat-info h4 {
+        font-size: var(--fs-xl);
+    }
+}
+
+/* ══════════════════════════════════════════════
+   SMALL MOBILE (≤ 480px)
+   ══════════════════════════════════════════════ */
+
+@media (max-width: 480px) {
+    .content {
+        padding: var(--space-3);
+    }
+
+    .card {
+        padding: var(--space-4);
+    }
+
+    .btn {
+        padding: var(--space-2) var(--space-4);
+        font-size: var(--fs-sm);
+    }
+
+    .login-form-card {
+        padding: var(--space-6);
+    }
+
+    .login-logo h1 {
+        font-size: var(--fs-3xl);
+    }
+
+    .page-header h2 {
+        font-size: var(--fs-xl);
+    }
+
+    /* Calendar - scrollable container */
+    .calendar-grid-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .calendar-grid.weekly {
+        min-width: 500px;
+    }
+}
+
+/* ══════════════════════════════════════════════
+   DESKTOP (≥ 769px)
+   ══════════════════════════════════════════════ */
+
+@media (min-width: 769px) {
+    .app-main {
+        margin-left: var(--sidebar-width);
+    }
+
+    .sidebar-overlay {
+        display: none !important;
+    }
+}

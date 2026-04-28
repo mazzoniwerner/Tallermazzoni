@@ -1,0 +1,31 @@
+tengo el siguiente contexto relatado en tercera persona "El contexto detalla el proyecto de Lucas mazzoni werner para transformar la gestión de su empresa de kinesiología a domicilio en Santiago, Chile, mediante el desarrollo de una aplicación web (webapp).1
+El Negocio y el Problema Principal
+Lucas dirige una empresa que coordina unas 200 atenciones mensuales para 20 a 30 pacientes, contando con un equipo de 8 kinesiólogos contratados por boleta a honorarios.1
+El problema es que la gestión actual es completamente manual. Lucas es el intermediario de todo el proceso:1
+Coordina la disponibilidad de los kinesiólogos (que se la envían semanalmente por WhatsApp).1
+Agenda la primera sesión del paciente, emparejando la necesidad del paciente con la especialidad del kinesiólogo.1
+Tras la primera sesión, los kinesiólogos coordinan las siguientes citas directamente con el paciente, pero luego envían un audio por WhatsApp a Lucas para relatar la evolución, lo que obliga a revisar múltiples fuentes de información.1
+Para el cierre de mes, Lucas revisa los audios de WhatsApp, notas personales y su calendario para consolidar cuántas sesiones cobrar a cada paciente (dependiendo del periodo de cobro de cada uno) y cuántas pagar a cada kinesiólogo (que se les paga mensualmente).1
+Este sistema manual le está generando un "colapso de tiempo" y le impide crecer, ya que la emisión de boletas y la coordinación de atenciones consumen demasiado de su jornada.1
+La Solución Requerida: Una WebApp
+Se necesita una webapp accesible desde el celular que automatice y estandarice estos procesos, respetando la estructura actual del negocio.1
+El sistema debe operar en torno a tres grandes pilares:1. Gestión de Fichas y Data
+Pacientes y Kinesiólogos: Lucas debe poder ingresar y editar la ficha clínica completa del paciente (incluyendo patología, diagnóstico y la orden médica en PDF o foto) y los datos de los kinesiólogos (con su especialidad).1
+2. Agendamiento y Calendario Centralizado (Rol de Lucas)
+Calendario General: Lucas necesita un calendario que muestre la disponibilidad de los kinesiólogos con un código de colores:1
+Verde: Bloque disponible sin agendar.1
+Azul: Bloque agendado con un paciente.1
+Rojo: Bloque no disponible.1
+Control de la Primera Sesión: Lucas es el único que agenda la primera sesión y puede editar o eliminar cualquier sesión agendada (bloques azules).1
+Bloques de Horario: Los horarios deben estar predefinidos, considerando tiempos de traslado (ej. 8:00-8:45, 9:15-10:00).1
+3. Portal del Kinesiólogo
+Acceso Restringido: Los kinesiólogos deben ingresar con usuario y contraseña únicos.1
+Disponibilidad: Deben poder subir y modificar su disponibilidad horaria (semanal o mensual).1
+Notas Clínicas y Agendamiento Subsecuente: El kinesiólogo puede ver sus pacientes asignados y debe:1
+Modificar el estatus de la sesión a "realizada".1
+Escribir obligatoriamente la nota clínica con la evolución del paciente, reemplazando el envío de audios por WhatsApp.1
+Agendar la siguiente visita con el paciente, ya que Lucas solo se encarga de la primera.1
+4. Consolidado Financiero (Cobro y Pago)
+Debe haber una sección para generar data de cobro y pago, que entregue un consolidado de sesiones realizadas en un periodo a elección.1
+Cobro a Pacientes: Debe listar el total de sesiones realizadas y el monto total a cobrar, permitiendo cambiar el estatus de la sesión a "cobrado".1
+Pago a Kinesiólogos: Debe listar las sesiones realizadas y el monto total a pagar por concepto de honorarios.1" Lo que vayas a crear créalo en la ruta C:\Users\zonomi\Downloads\agenda prueba\Claude

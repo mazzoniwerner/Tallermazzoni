@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KinesioCare</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ══════════════ LOGIN ══════════════ -->
+<div id="login-screen">
+  <div class="login-card">
+    <div class="login-logo">KC</div>
+    <h1>KinesioCare</h1>
+    <p>Gestión de kinesiología a domicilio</p>
+    <form id="login-form">
+      <div class="form-group">
+        <label>Usuario</label>
+        <input id="login-user" type="text" placeholder="ej: lucas" autocomplete="username" required>
+      </div>
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input id="login-pass" type="password" autocomplete="current-password" required>
+      </div>
+      <div id="login-error" class="error-msg hidden"></div>
+      <button type="submit" class="btn btn-primary btn-full">Ingresar</button>
+    </form>
+    <div class="login-hint">
+      <strong>Admin (Lucas):</strong> lucas / admin123<br>
+      <strong>Kinesiólogos:</strong> maria · carlos · ana / kine123
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ APP SHELL ══════════════ -->
+<div id="app-shell" class="hidden">
+
+  <!-- Mobile header -->
+  <header class="mobile-header">
+    <button id="menu-toggle" class="icon-btn">☰</button>
+    <span class="mobile-title">KinesioCare</span>
+    <button class="icon-btn" onclick="handleLogout()">↩</button>
+  </header>
+
+  <!-- Sidebar -->
+  <nav id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-mark">KC</div>
+      <span class="logo-text">KinesioCare</span>
+    </div>
+    <div class="sidebar-user">
+      <div class="user-avatar" id="nav-avatar"></div>
+      <div>
+        <div class="user-name"  id="nav-name"></div>
+        <div class="user-role"  id="nav-role"></div>
+      </div>
+    </div>
+    <ul class="nav-list" id="nav-list"></ul>
+    <button class="btn-logout" onclick="handleLogout()">↩ &nbsp;Cerrar sesión</button>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div id="sidebar-overlay" class="hidden" onclick="closeSidebar()"></div>
+
+  <!-- Main content -->
+  <main id="main"></main>
+
+</div>
+
+<!-- ══════════════ MODAL ══════════════ -->
+<div id="modal-overlay" class="hidden">
+  <div id="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<!-- ══════════════ TOASTS ══════════════ -->
+<div id="toast-container"></div>
+
+<script src="js/config.js"></script>
+<script src="js/db.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
